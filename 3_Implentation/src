@@ -1,1 +1,64 @@
+#include<stdio.h>  
+#include<stdlib.h>
+
+struct node  
+{  
+    struct node *prev;  
+    struct node *next;  
+    int data;  
+};  
+
+struct node *head;
+#include"ins_last.h" 
+#include"ins_beg.h"
+#include"ins_spe.h"  
+#include"del_beg.h"  
+#include"del_last.h"  
+#include"del_spe.h"
+#include"display.h" 
+
+void main ()  
+{  
+int choice =0;  
+    while(choice != 9)  
+    {  
+        printf("\n***Main Menu*\n");  
+        printf("\nChoose one option from the following list ...\n");  
+        printf("\n===============================================\n");  
+        printf("\n1.Insert in begining\n2.Insert at last\n3.Insert at any random location\n4.Delete from Beginning\n5.Delete from last\n6.Delete the node at random \n7.Show\n8.Exit\n");  
+        printf("\nEnter your choice?\n");  
+        scanf("\n%d",&choice);  
+        switch(choice)  
+        {  
+            case 1:  
+            insertion_beginning();  
+            break;  
+            case 2:  
+                    insertion_last();  
+            break;  
+            case 3:  
+            insertion_specified();  
+            break;  
+            case 4:  
+            deletion_beginning();  
+            break;  
+            case 5:  
+            deletion_last();  
+            break;  
+            case 6:  
+            deletion_specified();  
+            break;  
+            case 7:  
+            display();  
+            break;  
+            case 8:  
+            exit(0);  
+            break;  
+            default:  
+            printf("Please enter valid choice..");  
+        }  
+    }  
+    return;
+}  
+
 
